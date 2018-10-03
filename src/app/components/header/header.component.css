@@ -1,0 +1,12 @@
+#logo{
+    width: 10%;
+    min-width: 100px;
+    height: auto;
+    float: left;
+    padding: 15px;
+}
+
+.header{
+    width: auto;
+    height: 100px;
+}
