@@ -11,11 +11,11 @@ import { MOVIES } from './mock-movies';
 
 export class MovieService {
 
-  getMovie(Title: string): Observable<Movie> {
-    const url = `http://www.omdbapi.com/?t=${Title}&apikey=fd57cb4c`;
+  getMovie(title: string): Observable<Movie> {
+    const url = `http://www.omdbapi.com/?t=${title}&apikey=fd57cb4c`;
     let movie: Movie;
     this.http.get(url)
-    .pipe(map(response => response as any))
+    .pipe(map(response => response as Movie))
     .subscribe(data => {
       movie = data;
     });

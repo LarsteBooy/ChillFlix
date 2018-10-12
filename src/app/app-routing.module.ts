@@ -5,10 +5,10 @@ import { MovieOverviewComponent } from './movie-overview/movie-overview.componen
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
 
 const routes: Routes = [
+  { path: 'details/:id', component: MovieDetailsComponent},
+  { path: '', redirectTo: '/sidescroller', pathMatch: 'full'},
   { path: 'sidescroller', component: MovieSidescrollerComponent },
-  { path: 'overview', component: MovieOverviewComponent},
-  { path: 'details/:Title', component: MovieDetailsComponent},
-  { path: '', redirectTo: 'sidescroller', pathMatch: 'full'}
+  { path: 'overview', component: MovieOverviewComponent}
 ];
 
 @NgModule({

@@ -10,7 +10,7 @@ import { MovieService } from '../movie.service';
 })
 export class MovieDetailsComponent implements OnInit {
 
-  @Input() movie: Movie;
+  public movie: Movie;
 
   constructor(
     private route: ActivatedRoute,
@@ -19,7 +19,11 @@ export class MovieDetailsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    const title = this.route.snapshot.paramMap.get('Title');
+    this.getMovie();
+  }
+
+  getMovie(): void {
+    const title = this.route.snapshot.paramMap.get('id');
     this.movieService.getMovie(title).subscribe(movie => this.movie = movie);
   }
 
