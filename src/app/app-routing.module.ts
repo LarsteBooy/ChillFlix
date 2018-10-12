@@ -1,8 +1,8 @@
 import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
-import { MovieSidescrollerComponent } from './movie-sidescroller/movie-sidescroller.component';
-import { MovieOverviewComponent } from './movie-overview/movie-overview.component';
-import { MovieDetailsComponent } from './movie-details/movie-details.component';
+import { MovieSidescrollerComponent } from './movies/movie-sidescroller/movie-sidescroller.component';
+import { MovieOverviewComponent } from './movies/movie-overview/movie-overview.component';
+import { MovieDetailsComponent } from './movies/movie-details/movie-details.component';
 
 const routes: Routes = [
   { path: 'details/:id', component: MovieDetailsComponent},
