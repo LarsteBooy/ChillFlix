@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { Movie } from '../movie';
-import { MovieService } from '../movie.service';
+import { MovieService } from '../shared/movie.service';
+import { Movie } from '../shared/movie';
 
 @Component({
-  selector: 'app-movie-overview',
-  templateUrl: './movie-overview.component.html',
-  styleUrls: ['./movie-overview.component.css']
+  selector: 'app-movie-sidescroller',
+  templateUrl: './movie-sidescroller.component.html',
+  styleUrls: ['./movie-sidescroller.component.css']
 })
-export class MovieOverviewComponent implements OnInit {
+export class MovieSidescrollerComponent implements OnInit {
 
   movies: Movie[];
 
