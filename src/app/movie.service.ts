@@ -13,11 +13,11 @@ export class MovieService {
 
   getMovie(title: string): Observable<Movie> {
     const url = `http://www.omdbapi.com/?t=${title}&apikey=fd57cb4c`;
-    let movie: Movie;
+    const movie: Movie = {Title: 'Dummy', Plot: '1234'};
     this.http.get(url)
     .pipe(map(response => response as Movie))
     .subscribe(data => {
-      movie = data;
+      Object.assign(movie, data);
     });
     return of(movie);
   }
