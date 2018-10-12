@@ -2,11 +2,23 @@
     width: 10%;
     min-width: 100px;
     height: auto;
-    float: left;
-    padding: 15px;
+    margin-left: 15px;
+    cursor: pointer;
 }
 
-.header{
-    width: auto;
-    height: 100px;
+#collapse{
+    width: 2%;
+    min-width: 20px;
+    cursor: pointer;
+}
+
+#settings, #search{
+    width: 2%;
+    min-width: 20px;
+    float: right;
+    cursor: pointer;
+}
+
+#search{
+    margin-right: 20px;
 }
