@@ -11,6 +11,10 @@ import { MOVIES } from './mock-movies';
 
 export class MovieService {
 
+  private youtubeApiKey: String = 'AIzaSyAHeZkLc_DHUzzH87AuOA3wkQVWJezbbmE';
+  private omdbApiKey: String = 'fd57cb4c';
+  private youtubeApi: String = 'GET https://www.googleapis.com/youtube/v3/search';
+
   getMovie(title: string): Observable<Movie> {
     const url = `http://www.omdbapi.com/?t=${title}&apikey=fd57cb4c`;
     const movie: Movie = {Title: 'Dummy', Plot: '1234'};

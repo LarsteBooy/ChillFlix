@@ -9,6 +9,7 @@ import { MovieOverviewComponent } from './movies/movie-overview/movie-overview.c
 import { MovieSidescrollerComponent } from './movies/movie-sidescroller/movie-sidescroller.component';
 import { SearchComponent } from './core/search/search.component';
 import { HttpClientModule } from '@angular/common/http';
+import { MovieViewComponent } from './movies/movie-view/movie-view/movie-view.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { HttpClientModule } from '@angular/common/http';
     MovieDetailsComponent,
     MovieOverviewComponent,
     MovieSidescrollerComponent,
-    SearchComponent
+    SearchComponent,
+    MovieViewComponent
   ],
   imports: [
     BrowserModule,
