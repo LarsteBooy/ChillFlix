@@ -7,7 +7,7 @@ import { MovieViewComponent } from './movies/movie-view/movie-view.component';
 
 const routes: Routes = [
   { path: 'details/:id', component: MovieDetailsComponent},
-  { path: '', redirectTo: '/sidescroller', pathMatch: 'full'},
+  { path: '', redirectTo: '/overview', pathMatch: 'full'},
   { path: 'sidescroller', component: MovieSidescrollerComponent },
   { path: 'overview', component: MovieOverviewComponent},
   { path: 'view/:id', component: MovieViewComponent}

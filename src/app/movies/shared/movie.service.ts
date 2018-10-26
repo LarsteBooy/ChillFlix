@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Movie } from './movie';
-import { map } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of} from 'rxjs';
-import { MOVIES } from './mock-movies';
+import { Video } from './video';
 
 @Injectable({
   providedIn: 'root'
@@ -13,22 +13,39 @@ export class MovieService {
 
   private youtubeApiKey: String = 'AIzaSyAHeZkLc_DHUzzH87AuOA3wkQVWJezbbmE';
   private omdbApiKey: String = 'fd57cb4c';
-  private youtubeApi: String = 'GET https://www.googleapis.com/youtube/v3/search';
+
+  movies: Array<Movie>;
 
   getMovie(title: string): Observable<Movie> {
+    if (title.includes('-')) {
+      title = title.substring(0, title.indexOf('-'));
+    }
+    if (title.includes('|')) {
+      title = title.substring(0, title.indexOf('|'));
+    }
+    if (title.includes('/')) {
+      title = title.substring(0, title.indexOf('/'));
+    }
+    if (title.includes('(')) {
+      title = title.substring(0, title.indexOf('('));
+    }
+    if (title.includes('Trailer')) {
+      title = title.substring(0, title.indexOf('Trailer'));
+    }
     const url = `http://www.omdbapi.com/?t=${title}&apikey=fd57cb4c`;
-    const movie: Movie = {Title: 'Dummy', Plot: '1234'};
-    this.http.get(url)
-    .pipe(map(response => response as Movie))
-    .subscribe(data => {
-      Object.assign(movie, data);
-    });
-    return of(movie);
+    console.log('checking title..', title);
+    const movie: Movie = null;
+    return this.http.get(url)
+    .pipe(map(response => response as Movie));
   }
 
-  getMovies(): Observable<Movie[]> {
-    return of(MOVIES);
+  getMovies(): Observable<Array<Movie>> {
+    const url = 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=PL1DD10E84B9B08A35&maxResults=50&key=AIzaSyAHeZkLc_DHUzzH87AuOA3wkQVWJezbbmE';
+    return this.http.get(url)
+    .pipe(tap(data => console.log('Vraag videos op', data)))
+    .pipe(map(response => response['items']));
   }
+
 
   constructor(private http: HttpClient) { }
 }

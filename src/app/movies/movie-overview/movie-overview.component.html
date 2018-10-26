@@ -1,6 +1,6 @@
 <a *ngFor="let movie of movies"
-  routerLink="/details/{{movie.Title}}">
+  routerLink="/details/{{movie.snippet.title}}">
    <div>
-    <h4 class="Movie">{{movie.Title}}</h4>
+    <h4 class="Movie">{{movie.snippet.title}}</h4>
    </div>
 </a>
