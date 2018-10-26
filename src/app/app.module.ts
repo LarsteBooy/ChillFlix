@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { YoutubePlayerModule } from 'ngx-youtube-player';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './core/header/header.component';
@@ -9,7 +10,7 @@ import { MovieOverviewComponent } from './movies/movie-overview/movie-overview.c
 import { MovieSidescrollerComponent } from './movies/movie-sidescroller/movie-sidescroller.component';
 import { SearchComponent } from './core/search/search.component';
 import { HttpClientModule } from '@angular/common/http';
-import { MovieViewComponent } from './movies/movie-view/movie-view.component';
+import { MoviePlayerComponent } from './movies/movie-player/movie-player.component';
 
 @NgModule({
   declarations: [
@@ -19,12 +20,13 @@ import { MovieViewComponent } from './movies/movie-view/movie-view.component';
     MovieOverviewComponent,
     MovieSidescrollerComponent,
     SearchComponent,
-    MovieViewComponent
+    MoviePlayerComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    YoutubePlayerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

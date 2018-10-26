@@ -3,7 +3,6 @@ import { Movie } from './movie';
 import { map, tap } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of} from 'rxjs';
-import { Video } from './video';
 
 @Injectable({
   providedIn: 'root'

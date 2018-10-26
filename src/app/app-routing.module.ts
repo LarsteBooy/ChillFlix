@@ -3,14 +3,12 @@ import { NgModule } from '@angular/core';
 import { MovieSidescrollerComponent } from './movies/movie-sidescroller/movie-sidescroller.component';
 import { MovieOverviewComponent } from './movies/movie-overview/movie-overview.component';
 import { MovieDetailsComponent } from './movies/movie-details/movie-details.component';
-import { MovieViewComponent } from './movies/movie-view/movie-view.component';
 
 const routes: Routes = [
   { path: 'details/:id', component: MovieDetailsComponent},
   { path: '', redirectTo: '/overview', pathMatch: 'full'},
   { path: 'sidescroller', component: MovieSidescrollerComponent },
-  { path: 'overview', component: MovieOverviewComponent},
-  { path: 'view/:id', component: MovieViewComponent}
+  { path: 'overview', component: MovieOverviewComponent}
 ];
 
 @NgModule({
