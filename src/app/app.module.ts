@@ -10,6 +10,7 @@ import { MovieSidescrollerComponent } from './movies/movie-sidescroller/movie-si
 import { SearchComponent } from './core/search/search.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AdminComponent } from './modules/admin/admin.component';
+import { BreezerCasePipe } from './shared/pipes/breezerCase.pipe';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { AdminComponent } from './modules/admin/admin.component';
     MovieOverviewComponent,
     MovieSidescrollerComponent,
     SearchComponent,
+    BreezerCasePipe
   ],
   imports: [
     BrowserModule,
