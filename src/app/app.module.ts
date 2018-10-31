@@ -9,6 +9,7 @@ import { MovieOverviewComponent } from './movies/movie-overview/movie-overview.c
 import { MovieSidescrollerComponent } from './movies/movie-sidescroller/movie-sidescroller.component';
 import { SearchComponent } from './core/search/search.component';
 import { HttpClientModule } from '@angular/common/http';
+import { BreezerCasePipe } from './shared/pipes/breezerCase.pipe';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { HttpClientModule } from '@angular/common/http';
     MovieDetailsComponent,
     MovieOverviewComponent,
     MovieSidescrollerComponent,
-    SearchComponent
+    SearchComponent,
+    BreezerCasePipe
   ],
   imports: [
     BrowserModule,
