@@ -9,6 +9,7 @@ import { MovieOverviewComponent } from './movies/movie-overview/movie-overview.c
 import { MovieSidescrollerComponent } from './movies/movie-sidescroller/movie-sidescroller.component';
 import { SearchComponent } from './core/search/search.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AdminComponent } from './modules/admin/admin.component';
 import { BreezerCasePipe } from './shared/pipes/breezerCase.pipe';
 
 @NgModule({

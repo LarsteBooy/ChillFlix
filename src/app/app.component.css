@@ -1,3 +1,8 @@
 body{
     background-color: #141414;
 }
+
+#adminButton{
+    margin: auto;
+    display: block;
+}
