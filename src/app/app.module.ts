@@ -11,6 +11,8 @@ import { MovieSidescrollerComponent } from './movies/movie-sidescroller/movie-si
 import { SearchComponent } from './core/search/search.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MoviePlayerComponent } from './movies/movie-player/movie-player.component';
+import { AdminComponent } from './modules/admin/admin.component';
+import { BreezerCasePipe } from './shared/pipes/breezerCase.pipe';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { MoviePlayerComponent } from './movies/movie-player/movie-player.compone
     MovieOverviewComponent,
     MovieSidescrollerComponent,
     SearchComponent,
-    MoviePlayerComponent
+    MoviePlayerComponent,
+    BreezerCasePipe
   ],
   imports: [
     BrowserModule,

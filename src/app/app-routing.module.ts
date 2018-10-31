@@ -8,11 +8,13 @@ const routes: Routes = [
   { path: 'details/:id', component: MovieDetailsComponent},
   { path: '', redirectTo: '/overview', pathMatch: 'full'},
   { path: 'sidescroller', component: MovieSidescrollerComponent },
+  { path: 'admin', loadChildren: './modules/admin/admin.module#AdminModule' },
   { path: 'overview', component: MovieOverviewComponent}
 ];
 
 @NgModule({
-  exports: [ RouterModule ],
-  imports: [ RouterModule.forRoot(routes)]
+  imports: [ RouterModule.forRoot(routes)],
+  exports: [ RouterModule ]
+  
 })
 export class AppRoutingModule { }
