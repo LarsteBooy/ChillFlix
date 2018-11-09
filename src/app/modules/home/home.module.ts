@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home.component';
 import { AppModule } from '../../app.module'
 import { HomeRoutingModule } from './home.routing';
-import { AdminLoginComponent } from './components/admin-login/admin-login.component';
 
 @NgModule({
   imports: [
@@ -11,6 +10,6 @@ import { AdminLoginComponent } from './components/admin-login/admin-login.compon
     HomeRoutingModule,
     AppModule
   ],
-  declarations: [HomeComponent, AdminLoginComponent]
+  declarations: [HomeComponent]
 })
 export class HomeModule { }

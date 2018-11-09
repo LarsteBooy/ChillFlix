@@ -4,6 +4,8 @@ import { MovieSidescrollerComponent } from './modules/home/components/movie-side
 import { MovieOverviewComponent } from './modules/home/components/movie-overview/movie-overview.component';
 import { MovieDetailsComponent } from './modules/home/components/movie-details/movie-details.component';
 import { AdminAuthGuard } from './shared/guards/AdminAuthGuard.service';
+import { AdminLogoutComponent } from './modules/home/components/admin-logout/admin-logout.component';
+import { AdminLoginComponent } from './modules/home/components/admin-login/admin-login.component';
 
 const routes: Routes = [
   { 
@@ -23,11 +25,21 @@ const routes: Routes = [
     path: 'admin', 
     loadChildren: './modules/admin/admin.module#AdminModule',
     canActivate: [AdminAuthGuard],
-
+    data: {
+      expectedRole: 'Admin'
+    }
   },
   { 
     path: 'overview', 
     component: MovieOverviewComponent
+  },
+  {
+    path: 'admin-logout',
+    component: AdminLogoutComponent
+  },
+  {
+    path: 'admin-login',
+    component: AdminLoginComponent
   },
 ];
 

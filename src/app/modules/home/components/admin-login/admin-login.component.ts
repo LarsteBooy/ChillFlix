@@ -11,7 +11,7 @@ export class AdminLoginComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    localStorage.setItem(LOCAL_STORAGE_USER_ROLE, 'ADMIN');
+    localStorage.setItem(LOCAL_STORAGE_USER_ROLE, 'Admin');
   }
 
 }

@@ -11,8 +11,10 @@ import { MovieSidescrollerComponent } from './modules/home/components/movie-side
 import { SearchComponent } from './core/search/search.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MoviePlayerComponent } from './modules/home/components/movie-player/movie-player.component';
-import { AdminComponent } from './modules/admin/admin.component';
 import { BreezerCasePipe } from './shared/pipes/breezerCase.pipe';
+import { AdminButtonsComponent } from './modules/home/components/admin-buttons/admin-buttons.component';
+import { AdminLogoutComponent } from './modules/home/components/admin-logout/admin-logout.component';
+import { AdminLoginComponent } from './modules/home/components/admin-login/admin-login.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,10 @@ import { BreezerCasePipe } from './shared/pipes/breezerCase.pipe';
     MovieSidescrollerComponent,
     SearchComponent,
     MoviePlayerComponent,
-    BreezerCasePipe
+    BreezerCasePipe,
+    AdminButtonsComponent,
+    AdminLogoutComponent,
+    AdminLoginComponent
   ],
   imports: [
     BrowserModule,

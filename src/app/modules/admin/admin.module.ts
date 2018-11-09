@@ -11,7 +11,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
   ],
   declarations: [
     AdminComponent, 
-    DashboardComponent
+    DashboardComponent,
   ]
 })
 export class AdminModule { }

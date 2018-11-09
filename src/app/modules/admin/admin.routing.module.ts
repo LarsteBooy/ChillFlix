@@ -13,6 +13,7 @@ const adminRoutes: Routes = [
   },
 ];
 
+
 @NgModule({
   imports: [ RouterModule.forChild(adminRoutes)],
   exports: [ RouterModule ],

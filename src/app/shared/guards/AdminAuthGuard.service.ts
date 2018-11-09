@@ -15,11 +15,16 @@ export class AdminAuthGuard implements CanActivate {
 
     console.warn('User Role from LocalStorage: ', userRole);
 
-    if(route.data.expectedRolee === userRole){
-      return true;
-    }
+    let hoi: boolean = false;
 
-    return false;
+    if(route.data.expectedRole === userRole){
+      hoi = true;
+      return hoi
+    }
+    
+    console.warn(hoi);
+
+    return hoi
 
   }
 
