@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'admin-buttons',
+  selector: 'app-admin-buttons',
   templateUrl: './admin-buttons.component.html',
   styleUrls: ['./admin-buttons.component.css']
 })
