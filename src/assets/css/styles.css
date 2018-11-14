@@ -2,3 +2,13 @@ body{
     background-color: #141414;
     margin:20px;
 }
+
+youtube-player{
+    text-align: center;
+    display: block;
+}
+
+iframe{
+    width: 50%;
+    height: 500px;
+}
