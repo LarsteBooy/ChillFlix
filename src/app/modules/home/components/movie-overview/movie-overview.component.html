@@ -1,0 +1,12 @@
+<div class="row">
+  <ul class="list-unstyled list-inline">
+    <li>
+      <a *ngFor="let movie of movies"
+        [routerLink]="['/details', movie.id]">
+        <div>
+          <h4 class="Movie">{{movie.Title}}</h4>
+        </div>
+      </a>
+    </li>
+  </ul>
+</div>

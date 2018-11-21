@@ -1,16 +1,35 @@
 import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
-import { MovieOverviewComponent } from './movies/movie-overview/movie-overview.component';
-import { MovieDetailsComponent } from './movies/movie-details/movie-details.component';
+import { MovieOverviewComponent } from './modules/home/components/movie-overview/movie-overview.component';
+import { MovieDetailsComponent } from './modules/home/components/movie-details/movie-details.component';
+import { AdminAuthGuard } from './shared/guards/AdminAuthGuard.service';
 
 const routes: Routes = [
-  { path: 'details/:id', component: MovieDetailsComponent},
-  { path: '', redirectTo: '/overview', pathMatch: 'full'},
-  { path: 'overview', component: MovieOverviewComponent}
+  {
+    path: 'details/:id',
+    component: MovieDetailsComponent
+  },
+  {
+    path: '',
+    redirectTo: '/overview',
+    pathMatch: 'full'
+  },
+  {
+    path: 'admin',
+    loadChildren: './modules/admin/admin.module#AdminModule',
+    canActivate: [AdminAuthGuard],
+    data: {
+      expectedRole: 'Admin'
+    }
+  },
+  {
+    path: 'overview',
+    component: MovieOverviewComponent
+  },
 ];
 
 @NgModule({
-  exports: [ RouterModule ],
-  imports: [ RouterModule.forRoot(routes, {enableTracing: true})]
+  imports: [ RouterModule.forRoot(routes)],
+  exports: [ RouterModule ]
 })
 export class AppRoutingModule { }

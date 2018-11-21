@@ -1,0 +1,5 @@
+<div class="buttons">
+    <button class="admin-btn btn-dark" *ngIf="isAdmin" routerLink="/admin">Admin Page</button>
+    <button class="log-btn btn-dark" (click)="setAdmin()">Login</button>
+    <button class="log-btn btn-dark" *ngIf="isAdmin" (click)="setUser()">Logout</button>
+</div>
