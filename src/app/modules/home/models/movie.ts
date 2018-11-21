@@ -9,6 +9,8 @@ export class Movie {
         // OMDB /ACTORS
         public Actors?: string,
         // YOUTUBE   /snippet/resourceId/videoId
-        public id?: string
+        public id?: string,
+        // YOUTUBE   /snippet/thumbnails/default/url
+        public thumbnailURL?: string
         ) {}
 }
