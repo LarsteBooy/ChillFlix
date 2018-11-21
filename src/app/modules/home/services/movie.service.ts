@@ -44,6 +44,12 @@ export class MovieService {
     if (title.includes('Trailer')) {
       title = title.substring(0, title.indexOf('Trailer'));
     }
+    if (title.includes('Official')) {
+      title = title.substring(0, title.indexOf('Official'));
+    }
+    if (title.includes('Teaser')) {
+      title = title.substring(0, title.indexOf('Teaser'));
+    }
     return title;
   }
 
