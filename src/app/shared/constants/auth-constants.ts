@@ -1,1 +1,1 @@
-export const LOCAL_STORAGE_USER_ROLE = 'USER_ROLE';
+export const LOCAL_STORAGE_USER_ROLE = 'User';
