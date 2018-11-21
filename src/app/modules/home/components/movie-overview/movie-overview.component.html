@@ -5,13 +5,13 @@
   <img width="300" alt="Chillflix Logo" src="../assets/images/ChillFlix_logo.png">
 </div>
 
-<div class="row">
+<div >
   <ul class="list-unstyled list-inline">
     <li>
       <a *ngFor="let movie of movies"
         [routerLink]="['/details', movie.id]">
         <div>
-          <h4 class="Movie">{{movie.Title}}</h4>
+          <h4>{{movie.Title}}</h4>
           <img src={{movie.thumbnailURL}}>
         </div>
       </a>
