@@ -5,16 +5,17 @@
   <img width="300" alt="Chillflix Logo" src="../assets/images/ChillFlix_logo.png">
 </div>
 
-<div >
-  <ul class="list-unstyled list-inline">
-    <li>
+<h3>Most Recent</h3>
+<div class="row bar">
+  <ul class="list-unstyled list-inline carousel">
       <a *ngFor="let movie of movies"
         [routerLink]="['/details', movie.id]">
-        <div>
-          <h4>{{movie.Title}}</h4>
-          <img src={{movie.thumbnailURL}}>
-        </div>
+        <li class="list-inline-item">
+          <div class="movie">
+            <h4 class="movieTitle">{{movie.Title}}</h4>
+            <img class="col-sm thumbnail" src={{movie.thumbnailURL}}>
+          </div>
+        </li>
       </a>
-    </li>
   </ul>
 </div>

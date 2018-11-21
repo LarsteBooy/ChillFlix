@@ -1,3 +1,38 @@
-.Movie{
-    margin-left:15px;
+.movie:hover{
+    width: 350px;
 }
+
+.movieTitle{
+    display: none;
+    margin-left: 15px;
+    position: absolute;
+    z-index: 1;
+    
+}
+
+.movie:hover > .movieTitle{
+    display: block;
+    transition: all 0.5s ease-in-out;
+}
+
+.movie{
+    margin-top: 15px;
+    width: 250px;
+    transition: all 0.5s ease-in-out;
+}
+
+.carousel{
+    list-style-type:none;
+    white-space:nowrap;
+    overflow-x:auto;
+    height: 300px;
+}
+
+.carousel::-webkit-scrollbar {
+    background: red;
+}
+
+.carousel::-webkit-scrollbar-thumb{
+    background: black;
+}
+
