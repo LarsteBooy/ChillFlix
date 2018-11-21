@@ -3,7 +3,7 @@ export class Movie {
         // OMDB /TITLE
         public Title?: string,
         // OMDB /DESCRIPTION
-        public Description?: string,
+        public Plot?: string,
         // OMDB /GENRE
         public Genre?: string,
         // OMDB /ACTORS
