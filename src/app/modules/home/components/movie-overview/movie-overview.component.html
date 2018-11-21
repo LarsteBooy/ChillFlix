@@ -2,9 +2,9 @@
   <ul class="list-unstyled list-inline">
     <li>
       <a *ngFor="let movie of movies"
-        routerLink="/details/{{movie.snippet.title}}">
+        [routerLink]="['/details', movie.id]">
         <div>
-          <h4 class="Movie">{{movie.snippet.title}}</h4>
+          <h4 class="Movie">{{movie.Title}}</h4>
         </div>
       </a>
     </li>

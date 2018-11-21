@@ -10,12 +10,25 @@ import { Observable, of} from 'rxjs';
 
 export class MovieService {
 
-  private youtubeApiKey: String = 'AIzaSyAHeZkLc_DHUzzH87AuOA3wkQVWJezbbmE';
-  private omdbApiKey: String = 'fd57cb4c';
+  private youtubeApiKey = 'AIzaSyAHeZkLc_DHUzzH87AuOA3wkQVWJezbbmE';
+  private omdbApiKey = 'fd57cb4c';
+  private playlistUrl = 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=PL1DD10E84B9B08A35&maxResults=50&key=AIzaSyAHeZkLc_DHUzzH87AuOA3wkQVWJezbbmE';
 
-  movies: Array<Movie>;
+  // Map youtubeAPI data to this.movies
+  getMoviesFromYoutube(): Observable<any> {
+    return this.http.get(this.playlistUrl)
+    .pipe(tap(data => console.log('Vraag videos op van youtube', data)))
+    .pipe(map(response => response['items']));
+  }
 
-  getMovie(title: string): Observable<Movie> {
+  getMovieDetails(title: string): Observable<Movie> {
+    const cutTitle = this.cutTitleString(title);
+    const url = `http://www.omdbapi.com/?t=${cutTitle}&apikey=fd57cb4c`;
+    console.log('checking title..', cutTitle);
+    return this.http.get(url).pipe(map(response => response as Movie));
+  }
+
+  cutTitleString(title: string): string {
     if (title.includes('-')) {
       title = title.substring(0, title.indexOf('-'));
     }
@@ -31,18 +44,7 @@ export class MovieService {
     if (title.includes('Trailer')) {
       title = title.substring(0, title.indexOf('Trailer'));
     }
-    const url = `http://www.omdbapi.com/?t=${title}&apikey=fd57cb4c`;
-    console.log('checking title..', title);
-    const movie: Movie = null;
-    return this.http.get(url)
-    .pipe(map(response => response as Movie));
-  }
-
-  getMovies(): Observable<Array<Movie>> {
-    const url = 'https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=PL1DD10E84B9B08A35&maxResults=50&key=AIzaSyAHeZkLc_DHUzzH87AuOA3wkQVWJezbbmE';
-    return this.http.get(url)
-    .pipe(tap(data => console.log('Vraag videos op', data)))
-    .pipe(map(response => response['items']));
+    return title;
   }
 
 

@@ -1,10 +1,8 @@
 <div *ngIf="movie">
   <h2>{{movie.Title}}</h2>
-  <h2>{{movie.Plot | breezerCase}}</h2>
+  <h2>{{movie.Description}}</h2>
 </div>
 
 <br/>
 
-<div class="player">
-  <app-movie-player></app-movie-player>
-</div>
+<app-movie-player *ngIf="movie" [movieId]="movie.id"></app-movie-player>

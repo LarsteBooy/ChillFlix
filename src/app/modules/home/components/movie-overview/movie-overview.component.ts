@@ -9,7 +9,7 @@ import { MovieService } from '../../services/movie.service';
 })
 export class MovieOverviewComponent implements OnInit {
 
-  movies: Array<Movie>;
+  movies: Array<Movie> = new Array<Movie>();
 
   constructor(private movieService: MovieService) { }
 
@@ -18,9 +18,13 @@ export class MovieOverviewComponent implements OnInit {
   }
 
   getMovies(): void {
-    this.movieService.getMovies().subscribe(movies => {
-      console.log('got movies in component', movies);
-      this.movies = movies; });
+    this.movieService.getMoviesFromYoutube().subscribe(data => {
+      for (const playlistItem of data) {
+        this.movieService.getMovieDetails(playlistItem.snippet.title).subscribe(movieData => {
+          movieData.id = playlistItem.snippet.resourceId.videoId;
+          this.movies.push(movieData as Movie);
+        });
+    }});
   }
 
 }

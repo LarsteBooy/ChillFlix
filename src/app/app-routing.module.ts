@@ -1,6 +1,5 @@
 import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
-import { MovieSidescrollerComponent } from './modules/home/components/movie-sidescroller/movie-sidescroller.component';
 import { MovieOverviewComponent } from './modules/home/components/movie-overview/movie-overview.component';
 import { MovieDetailsComponent } from './modules/home/components/movie-details/movie-details.component';
 import { AdminAuthGuard } from './shared/guards/AdminAuthGuard.service';
@@ -14,10 +13,6 @@ const routes: Routes = [
     path: '',
     redirectTo: '/overview',
     pathMatch: 'full'
-  },
-  {
-    path: 'sidescroller',
-    component: MovieSidescrollerComponent
   },
   {
     path: 'admin',

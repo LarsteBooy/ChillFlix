@@ -7,7 +7,6 @@ import { HeaderComponent } from './core/header/header.component';
 import { AppRoutingModule } from './app-routing.module';
 import { MovieDetailsComponent } from './modules/home/components/movie-details/movie-details.component';
 import { MovieOverviewComponent } from './modules/home/components/movie-overview/movie-overview.component';
-import { MovieSidescrollerComponent } from './modules/home/components/movie-sidescroller/movie-sidescroller.component';
 import { SearchComponent } from './core/search/search.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MoviePlayerComponent } from './modules/home/components/movie-player/movie-player.component';
@@ -20,7 +19,6 @@ import { AdminButtonsComponent } from './modules/home/components/admin-buttons/a
     HeaderComponent,
     MovieDetailsComponent,
     MovieOverviewComponent,
-    MovieSidescrollerComponent,
     SearchComponent,
     MoviePlayerComponent,
     BreezerCasePipe,
