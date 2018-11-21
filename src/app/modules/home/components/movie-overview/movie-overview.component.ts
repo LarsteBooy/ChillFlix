@@ -22,6 +22,7 @@ export class MovieOverviewComponent implements OnInit {
       for (const playlistItem of data) {
         this.movieService.getMovieDetails(playlistItem.snippet.title).subscribe(movieData => {
           movieData.id = playlistItem.snippet.resourceId.videoId;
+          movieData.thumbnailURL = playlistItem.snippet.thumbnails.default.url;
           this.movies.push(movieData as Movie);
         });
     }});
