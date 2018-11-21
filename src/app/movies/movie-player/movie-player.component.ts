@@ -1,18 +1,15 @@
-import { Component } from '@angular/core';
- 
+import { Component, Input, OnInit } from '@angular/core';
+
 @Component({
   selector: 'app-movie-player',
-  template: `
-        <youtube-player
-      [videoId]="id"
-      (ready)="savePlayer($event)"
-      (change)="onStateChange($event)"
-    ></youtube-player>
-    `
+  templateUrl: './movie-player.component.html',
+  styleUrls: [ './movie-player.component.css' ]
 })
-export class MoviePlayerComponent {
+export class MoviePlayerComponent implements OnInit {
+
+  @Input() movieId: string;
+
   player: YT.Player;
-  private id = 'qDuKsiwS5xw';
 
   savePlayer(player) {
     this.player = player;
@@ -20,5 +17,8 @@ export class MoviePlayerComponent {
   }
   onStateChange(event) {
     console.log('player state', event.data);
+  }
+
+  ngOnInit() {
   }
 }

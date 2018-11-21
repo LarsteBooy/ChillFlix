@@ -7,7 +7,6 @@ import { HeaderComponent } from './core/header/header.component';
 import { AppRoutingModule } from './app-routing.module';
 import { MovieDetailsComponent } from './movies/movie-details/movie-details.component';
 import { MovieOverviewComponent } from './movies/movie-overview/movie-overview.component';
-import { MovieSidescrollerComponent } from './movies/movie-sidescroller/movie-sidescroller.component';
 import { SearchComponent } from './core/search/search.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MoviePlayerComponent } from './movies/movie-player/movie-player.component';
@@ -18,7 +17,6 @@ import { MoviePlayerComponent } from './movies/movie-player/movie-player.compone
     HeaderComponent,
     MovieDetailsComponent,
     MovieOverviewComponent,
-    MovieSidescrollerComponent,
     SearchComponent,
     MoviePlayerComponent
   ],

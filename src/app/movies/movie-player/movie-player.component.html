@@ -1,3 +1,5 @@
-<p>
-  movie-player works!
-</p>
+<youtube-player
+      [videoId]="movieId"
+      (ready)="savePlayer($event)"
+      (change)="onStateChange($event)"
+    ></youtube-player>

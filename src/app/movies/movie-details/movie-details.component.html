@@ -1,8 +1,8 @@
 <div *ngIf="movie">
   <h2>{{movie.Title}}</h2>
-  <h2>{{movie.Plot}}</h2>
+  <h2>{{movie.Description}}</h2>
 </div>
 
 <br/>
 
-<app-movie-player></app-movie-player>
+<app-movie-player *ngIf="movie" [movieId]="movie.id"></app-movie-player>

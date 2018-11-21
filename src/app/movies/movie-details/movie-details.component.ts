@@ -18,12 +18,16 @@ export class MovieDetailsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.getMovie();
-  }
-
-  getMovie(): void {
-    const title = this.route.snapshot.paramMap.get('id');
-    this.movieService.getMovie(title).subscribe(movie => this.movie = movie);
+    const id = this.route.snapshot.paramMap.get('id');
+    this.movieService.getMoviesFromYoutube().subscribe(data => {
+      for (const playlistItem of data) {
+        this.movieService.getMovieDetails(playlistItem.snippet.title).subscribe(movieData => {
+          movieData.id = playlistItem.snippet.resourceId.videoId;
+          if (movieData.id === id) {
+            this.movie = movieData as Movie;
+          }
+        });
+    }});
   }
 
 }
