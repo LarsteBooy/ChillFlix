@@ -1,1 +1,31 @@
-<button class="log-btn btn-dark" (click)="setAdmin()">Login as admin</button>
+<div class="row">
+  <div class="col-6 offset-3">
+    <form [formGroup]="registerForm" class="m-3">
+      <div class="form-group">
+        <label>First Name: </label>
+        <input class="form-control" placeholder="Enter your first name" type="text" formControlName="firstName"/>
+        <span class="text-danger">{{registerForm.controls['firstName'].errorMessage}}</span>
+      </div>
+      <div class="form-group">
+        <label>Last Name: </label>
+        <input class="form-control" placeholder="Enter your last name" type="text" formControlName="lastName"/>
+        <span class="text-danger">{{registerForm.controls['lastName'].errorMessage}}</span>
+      </div>
+      <div class="form-group">
+        <label>Email: </label>
+        <input class="form-control" placeholder="Enter your email" type="email" formControlName="email"/>
+        <span class="text-danger">{{registerForm.controls['email'].errorMessage}}</span>
+      </div>
+      <div class="form-group">
+        <label>Birthday: </label>
+        <input class="form-control" placeholder="Enter your birthday" type="date" formControlName="birthday"/>
+        <span class="text-danger">{{registerForm.controls['birthday'].errorMessage}}</span>
+      </div>
+      <button class="log-btn btn-dark" (click)="checkValue()" >Register</button>
+      <button class="log-btn btn-dark" (click)="setAdmin()" routerLink="/overview">Login as admin</button>
+    </form>
+  </div>
+</div>
+
+
+

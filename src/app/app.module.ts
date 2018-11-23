@@ -13,6 +13,10 @@ import { MoviePlayerComponent } from './modules/home/components/movie-player/mov
 import { BreezerCasePipe } from './shared/pipes/breezerCase.pipe';
 import { AdminButtonsComponent } from './modules/home/components/admin-buttons/admin-buttons.component';
 import { LoginPageComponent } from './modules/home/components/login-page/login-page.component';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import { RxReactiveFormsModule, ReactiveFormConfig } from '@rxweb/reactive-form-validators';
+
 
 @NgModule({
   declarations: [
@@ -30,7 +34,10 @@ import { LoginPageComponent } from './modules/home/components/login-page/login-p
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    YoutubePlayerModule
+    YoutubePlayerModule,
+    ReactiveFormsModule,
+    RxReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
