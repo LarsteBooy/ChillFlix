@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { MovieOverviewComponent } from './modules/home/components/movie-overview/movie-overview.component';
 import { MovieDetailsComponent } from './modules/home/components/movie-details/movie-details.component';
 import { AdminAuthGuard } from './shared/guards/AdminAuthGuard.service';
+import { LoginPageComponent } from './modules/home/components/login-page/login-page.component';
 
 const routes: Routes = [
   {
@@ -25,6 +26,10 @@ const routes: Routes = [
   {
     path: 'overview',
     component: MovieOverviewComponent
+  },
+  {
+    path: 'login-page',
+    component: LoginPageComponent
   },
 ];
 

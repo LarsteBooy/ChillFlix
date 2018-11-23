@@ -10,7 +10,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     AdminRoutingModule
   ],
   declarations: [
-    AdminComponent, 
+    AdminComponent,
     DashboardComponent,
   ]
 })
