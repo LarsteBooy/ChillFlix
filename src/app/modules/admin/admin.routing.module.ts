@@ -3,13 +3,13 @@ import { NgModule } from '@angular/core';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 const adminRoutes: Routes = [
-  { 
-    path: 'dashboard', 
+  {
+    path: 'dashboard',
     component: DashboardComponent
   },
-  { 
-    path: '', 
-    redirectTo: 'dashboard' 
+  {
+    path: '',
+    redirectTo: 'dashboard'
   },
 ];
 

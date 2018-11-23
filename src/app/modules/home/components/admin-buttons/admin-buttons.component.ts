@@ -8,21 +8,22 @@ import { LOCAL_STORAGE_USER_ROLE } from '../../../../shared/constants';
 })
 export class AdminButtonsComponent implements OnInit {
 
-  isAdmin: boolean;
+  isAdmin(): Boolean {
+    if (localStorage.getItem(LOCAL_STORAGE_USER_ROLE) === 'Admin') {
+      console.log(localStorage.getItem(LOCAL_STORAGE_USER_ROLE));
+      return true;
+    } else {
+     return false;
+    }
+  }
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  setAdmin(): void {
-    localStorage.setItem(LOCAL_STORAGE_USER_ROLE, 'Admin');
-    this.isAdmin = true;
-  }
-
   setUser(): void {
     localStorage.setItem(LOCAL_STORAGE_USER_ROLE, 'User');
-    this.isAdmin = false;
   }
 
 }
