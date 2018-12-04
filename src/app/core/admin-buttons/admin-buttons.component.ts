@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LOCAL_STORAGE_USER_ROLE } from '../../../../shared/constants';
+import { LOCAL_STORAGE_USER_ROLE } from '../../shared/constants';
 
 @Component({
   selector: 'app-admin-buttons',
