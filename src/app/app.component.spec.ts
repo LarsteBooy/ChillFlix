@@ -1,12 +1,25 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './core/header/header.component';
+import { SearchComponent } from './core/search/search.component';
+import { AppRoutingModule } from './app-routing.module';
+import { RouterTestingModule } from '@angular/router/testing';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/compiler/src/core';
 
 describe('AppComponent', () => {
+ 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        AppComponent
+      imports: [
+        AppRoutingModule,
+        RouterTestingModule.withRoutes([]),
       ],
+      declarations: [
+        AppComponent,
+        HeaderComponent,
+        SearchComponent,
+      ],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA]
     }).compileComponents();
   }));
 
