@@ -30,7 +30,7 @@
     "popper": "^1.0.1",
     "rxjs": "~6.3.3",
     "zone.js": "~0.8.26",
-    "snyk": "^1.279.1"
+    "snyk": "^1.290.1"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.8.0",
